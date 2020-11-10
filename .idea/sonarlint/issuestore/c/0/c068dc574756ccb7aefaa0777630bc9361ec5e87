@@ -1,0 +1,28 @@
+
+a
+java:S1128"?Remove this unused import 'work.aijiu.common.utils.TiimeUtils'.(´öèúÿÿÿÿ8ôáÆ½Ú.
+k
+java:S1128"IRemove this unused import 'work.aijiu.entity.ShopPropertiesRepairWorker'.(‚çûúÿÿÿÿ8Ş±ÔÚ.
+\
+java:S1128"?Remove this unused import 'work.aijiu.common.utils.JSONResult'.(Ôÿß…8¦œÉ½Ú.
+e
+java:S44889"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ùæÙ8¤òÛÚ.
+j
+java:S4488/"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(í¼Şùøÿÿÿÿ8¤òÛÚ.
+j
+java:S4488|"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ÊÜƒûşÿÿÿÿ8¤òÛÚ.
+T
+java:S1128"7Remove this unused import 'java.text.SimpleDateFormat'.(ú¡ÙÛ8ôáÆ½Ú.
+e
+java:S4488…"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ä¨Èz8¿‘ßÚ.
+j
+java:S4488r"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(µñ®ûÿÿÿÿ8¤òÛÚ.
+j
+java:S4488^"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ú„ˆ“ıÿÿÿÿ8¤òÛÚ.
+d
+java:S4488h"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(…é½{8¤òÛÚ.
+N
+java:S1128
+"1Remove this unused import 'java.text.DateFormat'.(÷Œá¼8ôáÆ½Ú.
+e
+java:S4488%"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ë»÷÷8¤òÛÚ.

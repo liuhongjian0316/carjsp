@@ -1,0 +1,35 @@
+
+Z
+java:S1128"8Remove this unused import 'work.aijiu.entity.Community'.(ñëºîÿÿÿÿÿ8şÑ×Ô.
+L
+java:S1128"6Remove this unused import 'javax.annotation.Resource'.(î¾Ì—
+g
+java:S4488r"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(¤ûê‡8°¼¤Ô.
+g
+java:S44887"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(©ŒòÛ8ï­Ô Ô.
+f
+java:S4488ƒ"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(’·±¦8áÇô¥Ô.
+L
+java:S5411>"*Use the primitive boolean expression here.(´æŒÇıÿÿÿÿ8Õ¬ì¥Ô.
+e
+java:S1126…"BReplace this if-then-else statement by a single method invocation.(ûóÎııÿÿÿÿ8ÔÅÁ§Ô.
+e
+java:S4488J"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Éï„’8ØÈ£Ô.
+l
+java:S4488U"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(õ±¸œÿÿÿÿÿ8÷×£Ô.
+e
+java:S1126”"BReplace this if-then-else statement by a single method invocation.(Ô´ Çúÿÿÿÿ8Š€Ã§Ô.
+M
+java:S5411…"*Use the primitive boolean expression here.(ûóÎııÿÿÿÿ8ö’ı¥Ô.
+M
+java:S5411”"*Use the primitive boolean expression here.(Ô´ Çúÿÿÿÿ8Á¸¦Ô.
+e
+java:S4488c"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ö¤û²8øé€¤Ô.
+L
+java:S5411e"*Use the primitive boolean expression here.(ò×áÿøÿÿÿÿ8Õ¬ì¥Ô.
+L
+java:S5411W"*Use the primitive boolean expression here.(‰ÁÁüÿÿÿÿ8Õ¬ì¥Ô.
+e
+java:S4488&"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(áÚĞ8êÕÔ.
+f
+java:S4488’"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(»ãÚà8ÌÜ£¦Ô.

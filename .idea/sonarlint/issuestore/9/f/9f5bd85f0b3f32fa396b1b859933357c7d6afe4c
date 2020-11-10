@@ -1,0 +1,42 @@
+
+M
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8ìŒÿÊ.
+]	java:S125k"<This block of commented-out lines of code should be removed.(¬ÿ§øÿÿÿÿ8ìŒÿÊ.
+‰
+java:S1130K"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(Òå‡¬8ìŒÿÊ.
+W	java:S125a"<This block of commented-out lines of code should be removed.(–¸Çu8ìŒÿÊ.
+]	java:S125\"<This block of commented-out lines of code should be removed.(™ìÔÙıÿÿÿÿ8ìŒÿÊ.
+]	java:S125v"<This block of commented-out lines of code should be removed.(å¢¾Æşÿÿÿÿ8ìŒÿÊ.
+Y	java:S125"<This block of commented-out lines of code should be removed.(İú÷®8ìŒÿÊ.
+X	java:S125o"<This block of commented-out lines of code should be removed.(÷¶8ìŒÿÊ.
+Y	java:S125…"<This block of commented-out lines of code should be removed.(×İ€Ç8ìŒÿÊ.
+N
+java:S3011R",This accessibility update should be removed.(Í÷«Ëıÿÿÿÿ8ìŒÿÊ.
+]	java:S125e"<This block of commented-out lines of code should be removed.(Ç³Ìâıÿÿÿÿ8ìŒÿÊ.
+Z
+java:S1128"=Remove this unused import 'org.springframework.aop.Pointcut'.(¨¦²ï8ìŒÿÊ.
+n
+java:S1128"LRemove this unused import 'org.apache.shiro.authz.annotation.RequiresRoles'.(¥¸Ã²øÿÿÿÿ8ìŒÿÊ.
+g	java:S112O"FDefine and throw a dedicated exception instead of using a generic one.(è›¢ßûÿÿÿÿ8ìŒÿÊ.
+‘
+java:S1130K"tRemove the declaration of thrown exception 'javassist.NotFoundException', as it cannot be thrown from method's body.(Òå‡¬8ìŒÿÊ.
+]	java:S125y"<This block of commented-out lines of code should be removed.(Œİ¤åûÿÿÿÿ8ìŒÿÊ.
+W	java:S125_"<This block of commented-out lines of code should be removed.(×Ó±w8ìŒÿÊ.
+^	java:S125"<This block of commented-out lines of code should be removed.(‰¤ÕÃüÿÿÿÿ8ìŒÿÊ.
+i
+java:S1128
+"LRemove this unused import 'javassist.bytecode.annotation.StringMemberValue'.(È€Ş8ìŒÿÊ.
+X	java:S125‰"<This block of commented-out lines of code should be removed.(âŸë!8ìŒÿÊ.
+–
+java:S1130K"yRemove the declaration of thrown exception 'javassist.CannotCompileException', as it cannot be thrown from method's body.(Òå‡¬8ìŒÿÊ.
+V
+java:S1128"9Remove this unused import 'javassist.bytecode.FieldInfo'.(ÂÜ­Â8ìŒÿÊ.
+Q
+java:S3740F"/Provide the parametrized type for this generic.(ì™ì¤ıÿÿÿÿ8õûÖçÑ.
+X	java:S125c"<This block of commented-out lines of code should be removed.(Ñã¦ê8ìŒÿÊ.
+]	java:S125m"<This block of commented-out lines of code should be removed.(Ç«ƒ§ıÿÿÿÿ8ìŒÿÊ.
+–
+java:S1130K"yRemove the declaration of thrown exception 'java.lang.ClassNotFoundException', as it cannot be thrown from method's body.(Òå‡¬8ìŒÿÊ.
+X	java:S125s"<This block of commented-out lines of code should be removed.(˜ÑÖù8ìŒÿÊ.
+^	java:S125“"<This block of commented-out lines of code should be removed.(À­ÖÈüÿÿÿÿ8ìŒÿÊ.
+]	java:S125{"<This block of commented-out lines of code should be removed.(§Â«¾ÿÿÿÿÿ8ìŒÿÊ.

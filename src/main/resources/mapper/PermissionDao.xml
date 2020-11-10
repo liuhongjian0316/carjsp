@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="work.aijiu.dao.PermissionDao">
+
+    <resultMap id="BaseResultMap" type="work.aijiu.entity.Permission">
+        <!--@Table permission-->
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="permissionId" column="permission_id" jdbcType="VARCHAR"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="description" column="description" jdbcType="VARCHAR"/>
+        <result property="url" column="url" jdbcType="VARCHAR"/>
+        <result property="perms" column="perms" jdbcType="VARCHAR"/>
+        <result property="parentId" column="parent_id" jdbcType="INTEGER"/>
+        <result property="type" column="type" jdbcType="INTEGER"/>
+        <result property="orderNum" column="order_num" jdbcType="INTEGER"/>
+        <result property="icon" column="icon" jdbcType="VARCHAR"/>
+        <result property="status" column="status" jdbcType="INTEGER"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="BaseResultMap">
+        select
+          id, permission_id, name, description, url, perms, parent_id, type, order_num, icon, status, create_time, update_time
+        from properties.permission
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="BaseResultMap">
+        select
+          id, permission_id, name, description, url, perms, parent_id, type, order_num, icon, status, create_time, update_time
+        from properties.permission
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="BaseResultMap">
+        select
+          id, permission_id, name, description, url, perms, parent_id, type, order_num, icon, status, create_time, update_time
+        from properties.permission
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="permissionId != null and permissionId != ''">
+                and permission_id = #{permissionId}
+            </if>
+            <if test="name != null and name != ''">
+                and name = #{name}
+            </if>
+            <if test="description != null and description != ''">
+                and description = #{description}
+            </if>
+            <if test="url != null and url != ''">
+                and url = #{url}
+            </if>
+            <if test="perms != null and perms != ''">
+                and perms = #{perms}
+            </if>
+            <if test="parentId != null">
+                and parent_id = #{parentId}
+            </if>
+            <if test="type != null">
+                and type = #{type}
+            </if>
+            <if test="orderNum != null">
+                and order_num = #{orderNum}
+            </if>
+            <if test="icon != null and icon != ''">
+                and icon = #{icon}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+            <if test="createTime != null">
+                and create_time = #{createTime}
+            </if>
+            <if test="updateTime != null">
+                and update_time = #{updateTime}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into properties.permission(permission_id, name, description, url, perms, parent_id, type, order_num, icon, status, create_time, update_time)
+        values (#{permissionId}, #{name}, #{description}, #{url}, #{perms}, #{parentId}, #{type}, #{orderNum}, #{icon}, #{status}, #{createTime}, #{updateTime})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update properties.permission
+        <set>
+            <if test="permissionId != null and permissionId != ''">
+                permission_id = #{permissionId},
+            </if>
+            <if test="name != null and name != ''">
+                name = #{name},
+            </if>
+            <if test="description != null and description != ''">
+                description = #{description},
+            </if>
+            <if test="url != null and url != ''">
+                url = #{url},
+            </if>
+            <if test="perms != null and perms != ''">
+                perms = #{perms},
+            </if>
+            <if test="parentId != null">
+                parent_id = #{parentId},
+            </if>
+            <if test="type != null">
+                type = #{type},
+            </if>
+            <if test="orderNum != null">
+                order_num = #{orderNum},
+            </if>
+            <if test="icon != null and icon != ''">
+                icon = #{icon},
+            </if>
+            <if test="status != null">
+                status = #{status},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from properties.permission where id = #{id}
+    </delete>
+
+    <select id="queryListByName" resultMap="BaseResultMap">
+        select * from
+            (select ur.role_id from 	user u  RIGHT JOIN user_role ur on u.user_id = ur.user_id where u.username = #{username}) h
+                RIGHT JOIN
+            (select  p.id, p.permission_id,p.name,p.description,p.url,p.perms,p.parent_id,p.type,p.order_num,p.icon,p.status,p.create_time,p.update_time,rp.role_id from permission p LEFT JOIN  role_permission rp on p.permission_id = rp.permission_id
+                where (p.type = '0' or p.type = '1') and p.status = '1'
+            ) z
+                on
+            h.role_id = z.role_id
+    </select>
+    <select id="queryPermissions" resultMap="BaseResultMap">
+        select * from
+            (select ur.role_id from 	user u  RIGHT JOIN user_role ur on u.user_id = ur.user_id where u.username = #{username}) h
+                RIGHT JOIN
+            (select  p.id, p.permission_id,p.name,p.description,p.url,p.perms,p.parent_id,p.type,p.order_num,p.icon,p.status,p.create_time,p.update_time,rp.role_id from permission p RIGHT JOIN  role_permission rp on p.permission_id = rp.permission_id where p.status = '1') z
+                on
+            h.role_id = z.role_id
+    </select>
+    <select id="queryAllPermissions" resultMap="BaseResultMap">
+        select * from
+            (select ur.role_id from 	user u  RIGHT JOIN user_role ur on u.user_id = ur.user_id where u.username = #{username}) h
+                RIGHT JOIN
+            (select  p.id, p.permission_id,p.name,p.description,p.url,p.perms,p.parent_id,p.type,p.order_num,p.icon,p.status,p.create_time,p.update_time,rp.role_id from permission p LEFT JOIN  role_permission rp on p.permission_id = rp.permission_id
+            ) z
+                on
+            h.role_id = z.role_id
+    </select>
+    <select id="queryUrlPermissions" resultMap="BaseResultMap">
+        select * from
+            (select ur.role_id from 	user u  RIGHT JOIN user_role ur on u.user_id = ur.user_id ) h
+                RIGHT JOIN
+            (select  p.id, p.permission_id,p.name,p.description,p.url,p.perms,p.parent_id,p.type,p.order_num,p.icon,p.status,p.create_time,p.update_time,rp.role_id from permission p LEFT JOIN  role_permission rp on p.permission_id = rp.permission_id
+            where p.type = '2'
+            ) z
+                on
+            h.role_id = z.role_id
+    </select>
+</mapper>

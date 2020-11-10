@@ -1,0 +1,6 @@
+
+m
+java:S2095"KUse try-with-resources or close this "SocketChannel" in a "finally" clause.(–¦ªÐøÿÿÿÿ8ÒéÐ«¾.
+R
+java:S1128"0Remove this unused import 'java.io.IOException'.(ªº»Úýÿÿÿÿ8”¬Ñ«¾.
+U	java:S106"9Replace this use of System.out or System.err by a logger.(îºÓ€8­¿Ù«¾.

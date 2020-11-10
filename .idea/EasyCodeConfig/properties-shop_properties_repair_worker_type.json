@@ -1,0 +1,43 @@
+{
+  "name" : "ShopPropertiesRepairWorkerType",
+  "originTableName" : "shop_properties_repair_worker_type",
+  "comment" : null,
+  "fullColumn" : [ {
+    "name" : "repairWorkerTypeId",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "ktShortType" : "String",
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "repairWorkerTypeName",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "ktShortType" : "String",
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "status",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "ktShortType" : "String",
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "remark",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "ktShortType" : "String",
+    "custom" : false,
+    "ext" : { }
+  } ],
+  "pkColumn" : null,
+  "otherColumn" : null,
+  "savePackageName" : "work.aijiu",
+  "savePath" : "./src/main/java/work/aijiu",
+  "saveModelName" : "carjsp"
+}

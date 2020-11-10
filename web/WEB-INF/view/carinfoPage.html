@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>车辆管理</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="../static/css/carinfo.css"/>
+		<link rel="stylesheet" type="text/css" href="../static/bootstrap/css/bootstrap-table.css"/>
+		<link rel="stylesheet" href="../static/bootstrap/css/bootstrap-table-jumpto.css">
+		<link rel="stylesheet" href="../static/bootstrap/css/bootstrap-datetimepicker.min.css">
+	</head>
+	<body>
+		<div class="container-fluid">
+			<!--top begin-->
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12" style="padding: 0;">
+					<!--数据表格位置-->
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title"><span class="glyphicon glyphicon-tasks">数据表格</span></h3>
+						</div>
+						<div class="panel-body">
+							<div id="toolbar" class="btn-group">
+								<button id="add2" type="button" class="btn  btn-success" data-toggle="modal" data-target="#addPage">
+									<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>新增
+								</button>
+								<button id="del2" class="btn btn-danger" data-toggle="modal">
+									<i class="glyphicon glyphicon-remove"></i> 删除
+								</button>
+								<!--删除模态框-->
+								<!-- 确认删除 -->
+								<div class="modal fade" id="delmodel" tabindex="-1" role="dialog" aria-labelledby="repdel">
+								  <div class="modal-dialog" role="document">
+								    <div class="modal-content">
+								      <div class="modal-header">
+								        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								        <h4 class="modal-title" id="repdel">提示信息</h4>
+								      </div>
+								      <div class="modal-body">
+								        确认删除吗？
+								      </div>
+								      <div class="modal-footer">
+								        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+								        <button type="button" class="btn btn-primary" id="SureToDel">确认</button>
+								      </div>
+								    </div>
+								  </div>
+								</div>
+								<!--请选择提示框-->
+								<div class="modal fade" id="pleasechoicemode" tabindex="-1" role="dialog" aria-labelledby="pleasechoice">
+								  <div class="modal-dialog" role="document">
+								    <div class="modal-content">
+								      <div class="modal-header">
+								        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								        <h4 class="modal-title" id="pleasechoice">提示信息</h4>
+								      </div>
+								      <div class="modal-body">
+								        请选择
+								      </div>
+								      <div class="modal-footer">
+								      </div>
+								    </div>
+								  </div>
+								</div>
+								<!--请选择一个-->
+								<div class="modal fade" id="choiceonemode" tabindex="-1" role="dialog" aria-labelledby="choiceone">
+								  <div class="modal-dialog" role="document">
+								    <div class="modal-content">
+								      <div class="modal-header">
+								        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								        <h4 class="modal-title" id="choiceone">提示信息</h4>
+								      </div>
+								      <div class="modal-body">
+								        请选择一个
+								      </div>
+								      <div class="modal-footer">
+								      </div>
+								    </div>
+								  </div>
+								</div>
+								<button id="edit2" class="btn btn-warning" >
+									<i class="glyphicon glyphicon-edit"></i> 修改
+								</button>
+
+								<div style="float: left; margin-left: 300px;">
+									账号：<input type="text" id="accountsearch" onkeyup="value=value.replace(/[\u4e00-\u9fa5]/ig,'')"/>
+									姓名：<input type="text" id="namesearch"/>
+									<button type="button" class="btn btn-default" onclick="Search();">搜索</button>
+									<button type="button" class="btn btn-default" onclick="searchReset();">重置</button>
+								</div>
+								</div>
+
+							</div>
+							<table id="table1"
+						         data-classes="table table-hover"
+								 data-response-handler="responseHandler">
+							</table>
+					  </div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--增加页面-->
+		<div id="addPage" class="modal fade bs-example-modal-lg" style="height: 620px;">
+			<div class="modal-dialog" role="document">
+			    <div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			        <h4 class="modal-title" id="myModalLabel">添加页面</h4>
+			    </div>
+			    <div class="modal-body">
+
+				<!-- 表单 -->
+				<form action="" id="addForm" class="">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-xs-5 col-sm-5 col-md-5" style="padding: 0;">
+								<div class="form-group has-success has-feedback" id="addplateNumberflag">
+									<div class="row">
+										<div class="col-xs-2 col-sm-2 col-md-2" style="padding: 0;">
+											<label class="control-label" for="addplateNumber" style="">车牌号</label>
+										</div>
+										<div class="col-xs-10 col-sm-10 col-md-10" style="padding: 0;">
+											<input type="text" class="form-control" aria-describedby="addplateNumber" placeholder="请输入车牌号"
+											id="addplateNumber" name="addplateNumber" onblur="checkAny(this,/(^[\u4E00-\u9FA5]{1}[A-Z0-9]{6}$)|(^[A-Z]{2}[A-Z0-9]{2}[A-Z0-9\u4E00-\u9FA5]{1}[A-Z0-9]{4}$)|(^[\u4E00-\u9FA5]{1}[A-Z0-9]{5}[挂学警军港澳]{1}$)|(^[A-Z]{2}[0-9]{5}$)|(^(08|38){1}[A-Z0-9]{4}[A-Z0-9挂学警军港澳]{1}$)/,'addplateNumberflag','addplateNumbericon','addplateNumberMsg','数据不合法')">
+											<span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" id="addplateNumbericon"></span>
+											<span class="help-block" id="addplateNumberMsg"></span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-1 col-sm-1 col-md-1" style="padding: 0;">
+							</div>
+							<div class="col-xs-5 col-sm-5 col-md-5" style="padding: 0;">
+								<div class="form-group has-success has-feedback" id="addvehicleClassnameflag">
+									<div class="row">
+										<div class="col-xs-2 col-sm-2 col-md-2" style="padding: 0;">
+											<label class="control-label" for="addvehicleClassname">车辆类型</label>
+										</div>
+										<div class="col-xs-10 col-sm-10 col-md-10" style="padding: 0;">
+											<select class="form-control" aria-describedby="addvehicleClassname" required="required" name="addvehicleClassname"
+													id="addvehicleClassname" onblur="checkAny(this,/^[\s\S]*.*[^\s][\s\S]*$/,'addvehicleClassnameflag','addvehicleClassnameicon','addvehicleClassnameMsg','请选择');">
+												<option value="">请选择</option>
+											</select>
+											<span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" id="addvehicleClassnameicon"></span>
+											<span class="help-block" id="addvehicleClassnameMsg"></span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--一组结束-->
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-xs-5 col-sm-5 col-md-5" style="padding: 0;">
+								<div class="form-group has-success has-feedback" id="addframeNumberflag">
+									<div class="row">
+										<div class="col-xs-2 col-sm-2 col-md-2" style="padding: 0;">
+											<label class="control-label" for="addframeNumber">车架号</label>
+										</div>
+										<div class="col-xs-10 col-sm-10 col-md-10" style="padding: 0;">
+											<input type="text" class="form-control" aria-describedby="addframeNumber" placeholder="请输入车架号"
+											id="addframeNumber" onblur="checkAny(this,/^[A-Za-z0-9]{17}$/,'addframeNumberflag','addframeNumbericon','addframeNumberMsg','数据不合法');">
+											<span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" id="addframeNumbericon"></span>
+											<span class="help-block" id="addframeNumberMsg"></span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-1 col-sm-1 col-md-1" style="padding: 0;">
+							</div>
+							<div class="col-xs-5 col-sm-5 col-md-5" style="padding: 0;">
+								<div class="form-group has-success has-feedback" id="addfactoryNumberflag">
+									<div class="row">
+										<div class="col-xs-2 col-sm-2 col-md-2" style="padding: 0;">
+											<label class="control-label" for="addfactoryNumber">出厂编号</label>
+										</div>
+										<div class="col-xs-10 col-sm-10 col-md-10" style="padding: 0;">
+											<input type="password" class="form-control" name="addfactoryNumber" aria-describedby="addfactoryNumber" placeholder="请输入出厂编号"
+											id="addfactoryNumber" onblur="checkAny(this,/^[0-9]{6}$/,'addfactoryNumberflag','addfactoryNumbericon','addfactoryNumberMsg','数据不合法');" onkeyup="value=value.replace(/[\u4e00-\u9fa5]/ig,'')">
+											<span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" id="addfactoryNumbericon"></span>
+											<span class="help-block" id="addfactoryNumberMsg"></span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--一组结束-->
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-xs-5 col-sm-5 col-md-5" style="padding: 0;">
+								<div class="form-group has-success has-feedback" id="addbrandModelflag">
+									<div class="row">
+										<div class="col-xs-2 col-sm-2 col-md-2" style="padding: 0;">
+											<label class="control-label" for="addbrandModel">品牌</label>
+										</div>
+										<div class="col-xs-10 col-sm-10 col-md-10" style="padding: 0;">
+											<select class="form-control" aria-describedby="addbrandModel" required="required" name="addbrandModel"
+											id="addbrandModel" onblur="checkAny(this,/^[\s\S]*.*[^\s][\s\S]*$/,'addbrandModelflag','addbrandModelicon','addbrandModelMsg','请选择');">
+												<option value="">请选择</option>
+											</select>
+											<span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" id="addbrandModelicon"></span>
+											<span class="help-block" id="addbrandModelMsg"></span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-1 col-sm-1 col-md-1" style="padding: 0;">
+							</div>
+							<div class="col-xs-5 col-sm-5 col-md-5" style="padding: 0;">
+								<div class="form-group has-success has-feedback" id="addregTimeflag">
+									<div class="row">
+										<div class="col-xs-2 col-sm-2 col-md-2" style="padding: 0;">
+											<label class="control-label">注册时间</label>
+										</div>
+										<div class="col-xs-10 col-sm-10 col-md-10" style="padding: 0;">
+											<div class='input-group date' id='data1'>
+												<input type='text' class="form-control" id="addregTime" readonly onblur="checkAny(this,/^[\s\S]*.*[^\s][\s\S]*$/,'addregtimeflag','addregtimeicon','addregtimeMsg','请选择');"/>
+												<span class="input-group-addon">
+                    								<span class="glyphicon glyphicon-calendar"></span>
+                								</span>
+												<span class="help-block" id="addregtimeMsg"></span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--一组结束-->
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-xs-5 col-sm-5 col-md-5" style="padding: 0;">
+								<div class="form-group has-success has-feedback" id="addexaminationTimeflag">
+									<div class="row">
+										<div class="col-xs-2 col-sm-2 col-md-2" style="padding: 0;">
+											<label class="control-label" >年检时间</label>
+										</div>
+										<div class="col-xs-10 col-sm-10 col-md-10" style="padding: 0;">
+											<div class='input-group date' id='data2'>
+												<input type='text' class="form-control" readonly id="addexaminationTime" onblur="checkAny(this,/^[\s\S]*.*[^\s][\s\S]*$/,'addexaminationTimeflag','addexaminationTimeicon','addexaminationTimeMsg','请选择');"/>
+												<span class="input-group-addon">
+                    								<span class="glyphicon glyphicon-calendar"></span>
+                								</span>
+												<span class="help-block" id="addexaminationTimeMsg"></span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-1 col-sm-1 col-md-1" style="padding: 0;">
+							</div>
+							<div class="col-xs-5 col-sm-5 col-md-5" style="padding: 0;">
+								<div class="form-group has-success has-feedback" id="addratedPassengersflag">
+									<div class="row">
+										<div class="col-xs-2 col-sm-2 col-md-2" style="padding: 0;">
+											<label class="control-label" for="addplateNumber" style="">额定载客</label>
+										</div>
+										<div class="col-xs-10 col-sm-10 col-md-10" style="padding: 0;">
+											<input type="text" class="form-control" aria-describedby="addratedPassengers" placeholder="请输入额定载客"
+												   id="addratedPassengers" name="addplateNumber" onblur="checkAny(this, /(^[1-9]{2}$)|(^[1-9]{1}$)/,'addratedPassengersflag','addratedPassengersicon','addratedPassengersMsg','数据不合法')" onkeyup="value=value.replace(/[^\d]/g,'')">
+											<span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" id="addratedPassengersicon"></span>
+											<span class="help-block" id="addratedPassengersMsg"></span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-1 col-sm-1 col-md-1" style="padding: 0;">
+							</div>
+						</div>
+					</div>
+					<!--一组结束-->
+
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-xs-5 col-sm-5 col-md-5" style="padding: 0;">
+								<div class="form-group has-success has-feedback" id="addstateflag">
+									<div class="row">
+										<div class="col-xs-2 col-sm-2 col-md-2" style="padding: 0;">
+											<label class="control-label" for="addstate">状态</label>
+										</div>
+										<div class="col-xs-10 col-sm-10 col-md-10" style="padding: 0;">
+											<select class="form-control" aria-describedby="addstate" required="required" name="addstate"
+											id="addstate" onblur="checkAny(this,/^[\s\S]*.*[^\s][\s\S]*$/,'addstateflag','addstateicon','addstateMsg','请选择');">
+												<option value="">请选择</option>
+												<option value="0">损坏</option>
+												<option value="1">正常</option>
+												<option value="2">借出</option>
+											</select>
+											<span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" id="addstateicon"></span>
+											<span class="help-block" id="addstateMsg"></span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-1 col-sm-1 col-md-1" style="padding: 0;">
+							</div>
+							<div class="col-xs-5 col-sm-5 col-md-5" style="padding: 0;">
+							<div class="form-group has-success has-feedback" id="addcommentInfoflag">
+								<div class="row">
+									<div class="col-xs-2 col-sm-2 col-md-2" style="padding: 0;">
+										<label class="control-label" for="addcommentInfo">备注信息</label>
+									</div>
+									<div class="col-xs-10 col-sm-10 col-md-10" style="padding: 0;">
+										<input type="text" class="form-control" aria-describedby="addcommentInfo" placeholder="请输入备注信息"
+											   id="addcommentInfo" name="addcommentInfo">
+										<span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" id="addcommentInfoicon"></span>
+										<span class="help-block" id="addcommentInfoMsg"></span>
+									</div>
+								</div>
+							</div>
+						</div>
+						</div>
+					</div>
+					<input  class="btn btn-primary" type="reset" id="resetbtu" style="display: none;"/>
+				</form>
+				</div>
+				  <div class="modal-footer">
+					<button type="button" class="btn btn-primary" id="addCar">添加</button>
+					<button type="button" class="btn btn-primary" onclick="$('#resetbtu').click();">重置</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+				  </div>
+				</div>
+			  </div>
+		</div>
+
+		<!--编辑页面-->
+		<div id="editPage" class="modal fade bs-example-modal-lg" style="height: 620px;">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="myModalLabel2">编辑页面</h4>
+					</div>
+					<div class="modal-body">
+
+						<!-- 表单 -->
+						<form action="" id="editForm" class="">
+							<input type="text" id="editid" style="display: none"/>
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col-xs-5 col-sm-5 col-md-5" style="padding: 0;">
+										<div class="form-group has-success has-feedback" id="editaccountflag">
+											<div class="row">
+												<div class="col-xs-1 col-sm-1 col-md-1" style="padding: 0;">
+													<label class="control-label" for="edituseraccount" style="">账号</label>
+												</div>
+												<div class="col-xs-10 col-sm-10 col-md-10" style="padding: 0;">
+													<input type="text" class="form-control" aria-describedby="adduseraccount" placeholder="请输入账号"
+														   id="edituseraccount" name="useraccount" onblur="checkAny(this,/^[a-zA-Z0-9_-]{4,10}$/,'editaccountflag','editacounticon','editaccountMsg','数据不合法')" onkeyup="value=value.replace(/[\u4e00-\u9fa5]/ig,'')">
+													<span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" id="editacounticon"></span>
+													<span class="help-block" id="editaccountMsg"></span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-xs-1 col-sm-1 col-md-1" style="padding: 0;">
+									</div>
+									<div class="col-xs-5 col-sm-5 col-md-5" style="padding: 0;">
+										<div class="form-group has-success has-feedback" id="editpwdflag">
+											<div class="row">
+												<div class="col-xs-1 col-sm-1 col-md-1" style="padding: 0;">
+													<label class="control-label" for="addpwd">密码</label>
+												</div>
+												<div class="col-xs-11 col-sm-11 col-md-11" style="padding: 0;">
+													<input type="password" class="form-control" name="addpwd" aria-describedby="addpwd" placeholder="请输入账号"
+														   id="editpwd" onblur="checkAny(this,/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/,'editpwdflag','editpwdicon','editpwdMsg','数据不合法')" onkeyup="value=value.replace(/[\u4e00-\u9fa5]/ig,'')">
+													<span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" id="editpwdicon"></span>
+													<span class="help-block" id="editpwdMsg"></span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--一组结束-->
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col-xs-5 col-sm-5 col-md-5" style="padding: 0;">
+										<div class="form-group has-success has-feedback" id="editrealnameflag">
+											<div class="row">
+												<div class="col-xs-1 col-sm-1 col-md-1" style="padding: 0;">
+													<label class="control-label" for="editrealname">姓名</label>
+												</div>
+												<div class="col-xs-10 col-sm-10 col-md-10" style="padding: 0;">
+													<input type="text" class="form-control" aria-describedby="addrealname" placeholder="请输入真实姓名"
+														   id="editrealname" onblur="checkAny(this,/^[\u4e00-\u9fa5]{2,4}$/,'editrealnameflag','wditrealnameicon','editrealnameMsg','数据不合法');">
+													<span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" id="editrealnameicon"></span>
+													<span class="help-block" id="editrealnameMsg"></span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-xs-1 col-sm-1 col-md-1" style="padding: 0;">
+									</div>
+									<div class="col-xs-5 col-sm-5 col-md-5" style="padding: 0;">
+										<div class="form-group has-success has-feedback" id="editreppwdflag">
+											<div class="row">
+												<div class="col-xs-1 col-sm-1 col-md-1" style="padding: 0;">
+													<label class="control-label" for="addreppwd">密码</label>
+												</div>
+												<div class="col-xs-11 col-sm-11 col-md-11" style="padding: 0;">
+													<input type="password" class="form-control" name="addreppwd" aria-describedby="addreppwd" placeholder="请输入密码"
+														   id="editreppwd" onblur="checkAny(this,/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/,'editreppwdflag','editreppwdicon','editreppwdMsg','数据不合法');pwdIsSame2();" onkeyup="value=value.replace(/[\u4e00-\u9fa5]/ig,'')">
+													<span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+													<span class="help-block" id="editreppwdMsg"></span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--一组结束-->
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col-xs-5 col-sm-5 col-md-5" style="padding: 0;">
+										<div class="form-group has-success has-feedback" id="editsexflag">
+											<div class="row">
+												<div class="col-xs-1 col-sm-1 col-md-1" style="padding: 0;">
+													<label class="control-label" for="addsex">性别</label>
+												</div>
+												<div class="col-xs-10 col-sm-10 col-md-10" style="padding: 0;">
+													<select class="form-control" aria-describedby="addsex" required="required" name="addsex"
+															id="editsex" onblur="checkAny(this,/^[\s\S]*.*[^\s][\s\S]*$/,'editsexflag','editsexicon','editsexMsg','请选择');">
+														<option value="">请选择</option>
+														<option value="0">男</option>
+														<option value="1">女</option>
+													</select>
+													<span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" id="editsexicon"></span>
+													<span class="help-block" id="editsexMsg"></span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-xs-1 col-sm-1 col-md-1" style="padding: 0;">
+									</div>
+									<div class="col-xs-5 col-sm-5 col-md-5" style="padding: 0;">
+										<div class="form-group has-success has-feedback" id="edittelflag">
+											<div class="row">
+												<div class="col-xs-1 col-sm-1 col-md-1" style="padding: 0;">
+													<label class="control-label" for="addtel">电话</label>
+												</div>
+												<div class="col-xs-11 col-sm-11 col-md-11" style="padding: 0;">
+													<input type="text" class="form-control" name="addtel" aria-describedby="addtel"
+														   id="edittel" onblur="checkAny(this,/^1(3|4|5|6|7|8|9)\d{9}$/,'edittelflag','edittelicon','edittelMsg','数据不合法');">
+													<span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" id="edittelicon"></span>
+													<span class="help-block" id="edittelMsg"></span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--一组结束-->
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col-xs-3 col-sm-3 col-md-3" style="padding: 0;">
+										<div class="form-group has-success has-feedback" id="editprovinceflag">
+											<div class="row">
+												<div class="col-xs-2 col-sm-2 col-md-2" style="padding: 0;">
+													<label class="control-label" for="edit_s_province">省</label>
+												</div>
+												<div class="col-xs-10 col-sm-10 col-md-10" style="padding: 0;">
+													<select  class="form-control" id="edit_s_province" name="edit_s_province" onblur="checkAny(this,/^[\s\S]*.*[^\s][\s\S]*$/,'editprovinceflag','editprovinceicon','editprovinceMsg','请选择');"></select>
+													<span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" id="editprovinceicon"></span>
+													<span class="help-block" id="editprovinceMsg"></span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-xs-1 col-sm-1 col-md-1" style="padding: 0;">
+									</div>
+									<div class="col-xs-3 col-sm-3 col-md-3" style="padding: 0;">
+										<div class="form-group has-success has-feedback" id="editcityflag">
+											<div class="row">
+												<div class="col-xs-2 col-sm-2 col-md-2" style="padding: 0;">
+													<label class="control-label" for="edit_s_city">市</label>
+												</div>
+												<div class="col-xs-10 col-sm-10 col-md-10" style="padding: 0;">
+													<select class="form-control" id="edit_s_city" name="edit_s_city" onblur="checkAny(this,/^[\s\S]*.*[^\s][\s\S]*$/,'editcityflag','editcityicon','editcityMsg','请选择');"></select>  
+													<span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" id="editcityicon"></span>
+													<span class="help-block" id="editcityMsg"></span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-xs-1 col-sm-1 col-md-1" style="padding: 0;">
+									</div>
+									<div class="col-xs-3 col-sm-3 col-md-3" style="padding: 0;">
+										<div class="form-group has-success has-feedback" id="editcountyflag">
+											<div class="row">
+												<div class="col-xs-2 col-sm-2 col-md-2" style="padding: 0;">
+													<label class="control-label" for="edit_s_county">区</label>
+												</div>
+												<div class="col-xs-10 col-sm-10 col-md-10" style="padding: 0;">
+													<select class="form-control" id="edit_s_county" name="edit_s_county" onblur="checkAny(this,/^[\s\S]*.*[^\s][\s\S]*$/,'editcountyflag','editcountyicon','editcountyMsg','请选择');"></select>
+													<span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" id="editcountyicon"></span>
+													<span class="help-block" id="editcountyMsg"></span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-xs-1 col-sm-1 col-md-1" style="padding: 0;">
+									</div>
+								</div>
+							</div>
+							<!--一组结束-->
+
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col-xs-5 col-sm-5 col-md-5" style="padding: 0;">
+										<div class="form-group has-success has-feedback" id="editroleflag">
+											<div class="row">
+												<div class="col-xs-1 col-sm-1 col-md-1" style="padding: 0;">
+													<label class="control-label" for="addrole">角色</label>
+												</div>
+												<div class="col-xs-10 col-sm-10 col-md-10" style="padding: 0;">
+													<select class="form-control" aria-describedby="addrole" required="required" name="addrole"
+															id="editrole" onblur="checkAny(this,/^[\s\S]*.*[^\s][\s\S]*$/,'editroleflag','editroleicon','editroleMsg','请选择');">
+														<option value="">请选择</option>
+														<option value="1">普通用户</option>
+														<option value="2">管理员</option>
+														<option value="3">超级管理员</option>
+													</select>
+													<span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" id="editroleicon"></span>
+													<span class="help-block" id="editroleMsg"></span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-xs-1 col-sm-1 col-md-1" style="padding: 0;">
+									</div>
+								</div>
+							</div>
+							<input  class="btn btn-primary" type="reset" id="editresetbtu" style="display: none;"/>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" id="editUser">修改</button>
+						<button type="button" class="btn btn-primary" onclick="$('#editresetbtu').click();">重置</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--请选择提示框-->
+		<div class="modal fade" id="handlersuccess" tabindex="-1" role="dialog" aria-labelledby="pleasechoice">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" >提示信息</h4>
+					</div>
+					<div class="modal-body">
+						操作成功
+					</div>
+					<div class="modal-footer">
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--请选择提示框-->
+		<div class="modal fade" id="handlerfail" tabindex="-1" role="dialog" aria-labelledby="pleasechoice">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" >提示信息</h4>
+					</div>
+					<div class="modal-body">
+						操作成功
+					</div>
+					<div class="modal-footer">
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+
+		<script src="../static/jquery/jquery-3.4.1.min.js"></script>
+		<script src="../static/bootstrap/js/bootstrap.min.js"></script>
+		<script src="../static/bootstrap/js/bootstrap-table.js"></script>
+		<script src="../static/bootstrap/js/bootstrap-table-zh-CN.js"></script>
+		<script src="../static/bootstrap/js/bootstrap-table-jumpto.js"></script>
+		<script src="../static/bootstrap/js/bootstrap-datetimepicker.min.js"></script>
+		<script src="../static/bootstrap/js/bootstrap-datetimepicker.zh-CN.js"></script>
+		<script src="../static/bootstrap/js/moment-with-locales.js"></script>
+		<script src="../static/bootstrap/js/moment.min.js"></script>
+		<script src="../static/js/carinfo.js"></script>
+
+	</body>
+</html>

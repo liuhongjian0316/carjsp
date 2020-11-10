@@ -1,0 +1,18 @@
+
+
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‚“¶î8Îç…ß¾.
+e
+java:S1128"CRemove this unused import 'io.netty.channel.ChannelHandlerContext'.(²Õ¢ùÿÿÿÿ8ˆâáß¾.
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ù×ª¶øÿÿÿÿ
+£
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ØÛˆøÿÿÿÿ8Îç…ß¾.
+e
+java:S1128"CRemove this unused import 'io.netty.channel.ChannelFutureListener'.(°¤¹şÿÿÿÿ8É½Øß¾.
+G
+java:S1481#"*Remove this unused "parse" local variable.(×Î¨Ğ8¾¦Ëß¾.
+X
+java:S1128"6Remove this unused import 'io.netty.util.CharsetUtil'.(óè ìşÿÿÿÿ8…›Şß¾.
+
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(â“òˆ8ê×Àß¾.
+R
+java:S1128"5Remove this unused import 'io.netty.buffer.Unpooled'.(ÏÁ¤ê8…›Şß¾.

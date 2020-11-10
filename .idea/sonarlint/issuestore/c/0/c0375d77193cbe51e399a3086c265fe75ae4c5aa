@@ -1,0 +1,9 @@
+
+[
+java:S2259"EA "NullPointerException" could be thrown; "endDate" is nullable here.(ù¨Í‰
+]
+java:S2259"GA "NullPointerException" could be thrown; "startDate" is nullable here.(ù¨Í‰
+r
+java:S14884"\Immediately return this expression instead of assigning it to the temporary variable "date".(ª§Æµ
+N
+java:S1128"8Remove this unused import 'org.joda.time.DateTimeUtils'.(≈ê…º

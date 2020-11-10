@@ -1,0 +1,11 @@
+
+_
+java:S1128"=Remove this unused import 'work.aijiu.common.utils.IdWorker'.(ÀšÆÜùÿÿÿÿ8ó‚˜¨Ó.
+S
+java:S1128"6Remove this unused import 'javax.annotation.Resource'.(î¾Ì—8‡Êô‰Ó.
+M
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8Âõô‰Ó.
+T
+java:S1128	"7Remove this unused import 'work.aijiu.entity.Building'.(”¥ê–8Æ¤¤ŠÓ.
+Q
+java:S3740@"/Provide the parametrized type for this generic.(ş¨˜Ëüÿÿÿÿ8ÊÈ«Ó.

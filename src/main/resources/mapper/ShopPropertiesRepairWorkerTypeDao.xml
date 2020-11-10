@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="work.aijiu.dao.ShopPropertiesRepairWorkerTypeDao">
+
+    <resultMap id="BaseResultMap" type="work.aijiu.entity.ShopPropertiesRepairWorkerType">
+        <!--@Table shop_properties_repair_worker_type-->
+        <result property="repairWorkerTypeId" column="repair_worker_type_id" jdbcType="VARCHAR"/>
+        <result property="repairWorkerTypeName" column="repair_worker_type_name" jdbcType="VARCHAR"/>
+        <result property="status" column="status" jdbcType="VARCHAR"/>
+        <result property="remark" column="remark" jdbcType="VARCHAR"/>
+    </resultMap>
+
+</mapper>

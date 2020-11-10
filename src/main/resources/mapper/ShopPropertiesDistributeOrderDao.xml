@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="work.aijiu.dao.ShopPropertiesDistributeOrderDao">
+
+    <resultMap id="BaseResultMap" type="work.aijiu.entity.ShopPropertiesDistributeOrder">
+        <!--@Table shop_properties_distribute_order-->
+        <result property="distributeOrderId" column="distribute_order_id" jdbcType="VARCHAR"/>
+        <result property="workOrderId" column="work_order_id" jdbcType="VARCHAR"/>
+        <result property="workType" column="work_type" jdbcType="VARCHAR"/>
+        <result property="workNumber" column="work_number" jdbcType="VARCHAR"/>
+        <result property="shopId" column="shop_Id" jdbcType="VARCHAR"/>
+        <result property="shopName" column="shop_name" jdbcType="VARCHAR"/>
+        <result property="applyName" column="apply_name" jdbcType="VARCHAR"/>
+        <result property="tel" column="tel" jdbcType="VARCHAR"/>
+        <result property="reserveTime" column="reserve_time" jdbcType="TIMESTAMP"/>
+        <result property="address" column="address" jdbcType="VARCHAR"/>
+        <result property="state" column="state" jdbcType="VARCHAR"/>
+        <result property="status" column="status" jdbcType="VARCHAR"/>
+        <result property="remark" column="remark" jdbcType="VARCHAR"/>
+        <result property="faultDescription" column="fault_description" jdbcType="OTHER"/>
+        <result property="faultDescriptionContent" column="fault_description_content" jdbcType="OTHER"/>
+        <result property="worker" column="worker" jdbcType="VARCHAR"/>
+        <result property="repairDescription" column="repair_description" jdbcType="VARCHAR"/>
+        <result property="isReinforce" column="is_reinforce" jdbcType="VARCHAR"/>
+        <result property="employeeId" column="employee_id" jdbcType="VARCHAR"/>
+        <result property="telmark" column="telmark" jdbcType="VARCHAR"/>
+        <result property="rewardmark" column="rewardmark" jdbcType="VARCHAR"/>
+    </resultMap>
+
+</mapper>

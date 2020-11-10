@@ -1,0 +1,13 @@
+
+[
+java:S1948P"9Make "faultDescriptionContent" transient or serializable.(Ÿ¹Šüÿÿÿÿ8œÔ›Ö.
+I
+java:S1948X"'Make "cause" transient or serializable.(ìÃóşıÿÿÿÿ8Ï¤ãéÖ.
+K
+java:S1948\".Make "causeContent" transient or serializable.(éÃˆå8Ï¤ãéÖ.
+O
+java:S1948L"2Make "faultDescription" transient or serializable.(æŠ¢8‚À›Ö.
+P
+java:S1948t"3Make "contentEvaluation" transient or serializable.(™æà¶8·îáéÖ.
+\
+java:S1948x":Make "contentEvaluationContent" transient or serializable.(¯ĞøÇüÿÿÿÿ8·îáéÖ.

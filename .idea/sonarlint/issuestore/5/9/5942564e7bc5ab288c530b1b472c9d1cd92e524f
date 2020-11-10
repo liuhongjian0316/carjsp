@@ -1,0 +1,12 @@
+
+p
+java:S1104
+"NMake id a static final constant or non-public and provide accessors if needed.(Â¥Šˆøÿÿÿÿ8‰ÓàÇÁ.
+n
+java:S1104"QMake title a static final constant or non-public and provide accessors if needed.(Å¬õ8ğ‰ÕÈÁ.
+m
+java:S1104"PMake icon a static final constant or non-public and provide accessors if needed.(­À¤8‰ÓàÇÁ.
+v
+java:S1104"TMake parentId a static final constant or non-public and provide accessors if needed.(‰‚£„ùÿÿÿÿ8‰ÓàÇÁ.
+s
+java:S1104"QMake index a static final constant or non-public and provide accessors if needed.(ú¬œğşÿÿÿÿ8á³ÕÈÁ.

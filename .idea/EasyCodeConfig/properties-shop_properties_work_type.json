@@ -1,0 +1,43 @@
+{
+  "name" : "ShopPropertiesWorkType",
+  "originTableName" : "shop_properties_work_type",
+  "comment" : null,
+  "fullColumn" : [ {
+    "name" : "workTypeId",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "ktShortType" : "String",
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "workTypeName",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "ktShortType" : "String",
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "statues",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "ktShortType" : "String",
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "remark",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "ktShortType" : "String",
+    "custom" : false,
+    "ext" : { }
+  } ],
+  "pkColumn" : null,
+  "otherColumn" : null,
+  "savePackageName" : "work.aijiu",
+  "savePath" : "./src/main/java/work/aijiu",
+  "saveModelName" : "carjsp"
+}

@@ -1,0 +1,18 @@
+
+v
+java:S1128"YRemove this unused import 'work.aijiu.service.impl.ShopPropertiesWorkOrderCsServiceImpl'.(¼Ä˜8¶ûì“Ù.
+I
+java:S16124",Replace this lambda with a method reference.(ı÷ê8´¾¥›Ù.
+[
+java:S1155N">Use isEmpty() to check whether the collection is empty or not.(™ÀÑœ8³û°ŸÙ.
+c
+java:S1128"FRemove this unused import 'work.aijiu.entity.ShopPropertiesWorkOrder'.(öâÓ8õôê“Ù.
+[
+java:S1155<">Use isEmpty() to check whether the collection is empty or not.(™ÀÑœ8´¾¥›Ù.
+l
+java:S4488$"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(¼òµ’şÿÿÿÿ8€€ÑÖÚ.
+e
+java:S4488H"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ğÂ÷“8€€ÑÖÚ.
+j
+java:S4488Z"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(üÑºàÿÿÿÿÿ8€€ÑÖÚ.
+X	java:S1259"<This block of commented-out lines of code should be removed.(Ìëìí8€€ÑÖÚ.

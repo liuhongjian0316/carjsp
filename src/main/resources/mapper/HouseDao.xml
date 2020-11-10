@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="work.aijiu.dao.HouseDao">
+
+    <resultMap id="BaseResultMap" type="work.aijiu.entity.House">
+        <!--@Table house-->
+        <result property="houseId" column="house_id" jdbcType="VARCHAR"/>
+        <result property="communityId" column="community_id" jdbcType="VARCHAR"/>
+        <result property="buildingId" column="building_id" jdbcType="VARCHAR"/>
+        <result property="unitId" column="unit_id" jdbcType="VARCHAR"/>
+        <result property="houseFloor" column="house_floor" jdbcType="VARCHAR"/>
+        <result property="houseNum" column="house_num" jdbcType="VARCHAR"/>
+        <result property="houseType" column="house_type" jdbcType="VARCHAR"/>
+        <result property="houseArea" column="house_area" jdbcType="VARCHAR"/>
+        <result property="houseCostFactor" column="house_cost_factor" jdbcType="VARCHAR"/>
+        <result property="isShop" column="is_shop" jdbcType="VARCHAR"/>
+        <result property="isCommercialHouse" column="is_commercial_house" jdbcType="VARCHAR"/>
+        <result property="state" column="state" jdbcType="VARCHAR"/>
+        <result property="remark" column="remark" jdbcType="VARCHAR"/>
+    </resultMap>
+</mapper>

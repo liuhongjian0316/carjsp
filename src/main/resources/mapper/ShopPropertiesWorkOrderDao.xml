@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="work.aijiu.dao.ShopPropertiesWorkOrderDao">
+
+    <resultMap id="BaseResultMap" type="work.aijiu.entity.ShopPropertiesWorkOrder">
+        <!--@Table shop_properties_work_order-->
+        <result property="work orderId" column="work order_id" jdbcType="VARCHAR"/>
+        <result property="workTypeId" column="work_type_id" jdbcType="VARCHAR"/>
+        <result property="workNumber" column="work_number" jdbcType="VARCHAR"/>
+        <result property="shopId" column="shop_id" jdbcType="VARCHAR"/>
+        <result property="shopName" column="shop_name" jdbcType="VARCHAR"/>
+        <result property="applyName" column="apply_name" jdbcType="VARCHAR"/>
+        <result property="tel" column="tel" jdbcType="VARCHAR"/>
+        <result property="reserveTime" column="reserve_time" jdbcType="TIMESTAMP"/>
+        <result property="address" column="address" jdbcType="VARCHAR"/>
+        <result property="state" column="state" jdbcType="VARCHAR"/>
+        <result property="status" column="status" jdbcType="VARCHAR"/>
+        <result property="remark" column="remark" jdbcType="VARCHAR"/>
+        <result property="payState" column="pay_state" jdbcType="VARCHAR"/>
+        <result property="totalMoney" column="total_money" jdbcType="VARCHAR"/>
+        <result property="faultDescription" column="fault_description" jdbcType="OTHER"/>
+        <result property="faultDescriptionContent" column="fault_description_content" jdbcType="OTHER"/>
+        <result property="worker" column="worker" jdbcType="VARCHAR"/>
+        <result property="cause" column="cause" jdbcType="OTHER"/>
+        <result property="causeContent" column="cause_content" jdbcType="OTHER"/>
+        <result property="chargePerson" column="charge_person" jdbcType="VARCHAR"/>
+        <result property="faultCause" column="fault_cause" jdbcType="VARCHAR"/>
+        <result property="reactSpeed" column="react_speed" jdbcType="VARCHAR"/>
+        <result property="professionLevel" column="profession_level" jdbcType="VARCHAR"/>
+        <result property="serviceAttitude" column="service_attitude" jdbcType="VARCHAR"/>
+        <result property="contentEvaluation" column="content_evaluation" jdbcType="OTHER"/>
+        <result property="contentEvaluationContent" column="content_evaluation_content" jdbcType="OTHER"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+</mapper>

@@ -1,0 +1,12 @@
+
+h
+java:S2095"FUse try-with-resources or close this "Selector" in a "finally" clause.(ŠŞö ùÿÿÿÿ8ÎÃíª¾.
+s
+java:S2095"QUse try-with-resources or close this "ServerSocketChannel" in a "finally" clause.(ãöŒÎüÿÿÿÿ8ÎÃíª¾.
+Z	java:S106D"9Replace this use of System.out or System.err by a logger.(¸œ¶Óşÿÿÿÿ8äµÂ«¾.
+v
+java:S1128"TRemove this unused import 'org.springframework.mail.javamail.InternetAddressEditor'.(–®ºıÿÿÿÿ8Ÿäóª¾.
+U
+java:S1128"3Remove this unused import 'java.net.SocketAddress'.(ìÜˆ©ıÿÿÿÿ8·Úòª¾.
+X	java:S125*"<This block of commented-out lines of code should be removed.(¨Ñ¨8ğ´’¬¾.
+Z	java:S1068"9Replace this use of System.out or System.err by a logger.(˜ßäËûÿÿÿÿ8õÅ¨«¾.

@@ -1,0 +1,10 @@
+
+U	java:S106"9Replace this use of System.out or System.err by a logger.(¸†´—8õ¹­Œ¾.
+U	java:S106"9Replace this use of System.out or System.err by a logger.(æşÍÓ8¦–·´¾.
+U	java:S106"9Replace this use of System.out or System.err by a logger.(’‡³¶8úÑº´¾.
+I
+java:S1481"-Remove this unused "pipeline" local variable.(Øµ8´¡µ´¾.
+e
+java:S1128"HRemove this unused import 'io.netty.util.concurrent.EventExecutorGroup'.(»—âŞ8­›Ï‹¾.
+U	java:S106"9Replace this use of System.out or System.err by a logger.(ç÷8´¡µ´¾.
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(Ù­…áûÿÿÿÿ8´¡µ´¾.

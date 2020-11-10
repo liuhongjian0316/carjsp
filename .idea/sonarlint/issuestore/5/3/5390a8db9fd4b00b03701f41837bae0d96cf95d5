@@ -1,0 +1,13 @@
+
+E	java:S108n")Either remove or fill this block of code.(Úîø›8îýÁ­¾.
+t
+java:S3776,"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(¤»…©þÿÿÿÿ8‘®§­¾.
+U	java:S106y"9Replace this use of System.out or System.err by a logger.(ýŸõ¾8Ò€Ë­¾.
+Z	java:S106>"9Replace this use of System.out or System.err by a logger.(ð¦ßŸÿÿÿÿÿ8’°›­¾.
+Z	java:S106I"9Replace this use of System.out or System.err by a logger.(£¬ù¢ÿÿÿÿÿ8‘®§­¾.
+b	java:S112w"FDefine and throw a dedicated exception instead of using a generic one.(ÓÆ«­8Ø¿Ý­¾.
+Z	java:S106g"9Replace this use of System.out or System.err by a logger.(Õæóáûÿÿÿÿ8¦ÍÂ­¾.
+G
+java:S1172w"*Remove this unused method parameter "msg".(ÓÆ«­8Ò€Ë­¾.
+U	java:S106_"9Replace this use of System.out or System.err by a logger.(Í§§®8ÊÕ¾­¾.
+E	java:S108s")Either remove or fill this block of code.(Úîø›8´ú»­¾.

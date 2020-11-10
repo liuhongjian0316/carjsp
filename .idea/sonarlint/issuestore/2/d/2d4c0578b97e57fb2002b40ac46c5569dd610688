@@ -1,0 +1,31 @@
+
+j
+java:S4488t"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ßáì‰øÿÿÿÿ8›­ˆÒ.
+G
+java:S5411h"*Use the primitive boolean expression here.(Á£Æ»8Ï¶ŒÒ.
+S
+java:S1128"6Remove this unused import 'javax.annotation.Resource'.(î¾Ì—8¾ÒâÑ.
+G
+java:S5411v"*Use the primitive boolean expression here.(ĞŸ—”8Ï¶ŒÒ.
+e
+java:S44883"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ÅèÛ×8šĞŒŒÒ.
+h
+java:S4488‚"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(÷¸§8ôó›Ò.
+L
+java:S1128"*Remove this unused import 'java.util.Map'.(¼è½Òşÿÿÿÿ8è“‚èÑ.
+H
+java:S5411„"*Use the primitive boolean expression here.(ÈÊÉ„8—¥ËÒ.
+j
+java:S4488["HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ÁûÃúÿÿÿÿ8›­ˆÒ.
+M
+java:S5411’"*Use the primitive boolean expression here.(ö–†èøÿÿÿÿ8û‹Ü‘Ò.
+G
+java:S5411O"*Use the primitive boolean expression here.(€äãŸ8Ï¶ŒÒ.
+g
+java:S4488E"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(Ÿ˜âÆ8ç¿çÑ.
+g
+java:S4488f"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(°º8›­ˆÒ.
+j
+java:S4488#"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(í æÖüÿÿÿÿ8Õ«ÃãÑ.
+k
+java:S4488"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ğóÊœıÿÿÿÿ8´ïÃ‘Ò.

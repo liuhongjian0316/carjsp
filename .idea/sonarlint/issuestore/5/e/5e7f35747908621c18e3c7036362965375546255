@@ -1,0 +1,26 @@
+
+v
+java:S1128"YRemove this unused import 'io.netty.handler.codec.http.multipart.HttpPostRequestDecoder'.(¨’œ¨8—≈Éﬁæ.
+]	java:S125O"<This block of commented-out lines of code should be removed.(¡Œ®´¸ˇˇˇˇ8⁄‡øﬂæ.
+]	java:S125E"<This block of commented-out lines of code should be removed.(à¸Ò´¯ˇˇˇˇ8⁄‡øﬂæ.
+Q
+java:S1128"4Remove this unused import 'io.netty.buffer.ByteBuf'.(¨∂Áõ8—≈Éﬁæ.
+X	java:S125M"<This block of commented-out lines of code should be removed.(öí§∆8⁄‡øﬂæ.
+]	java:S125?"<This block of commented-out lines of code should be removed.(¡Œ®´¸ˇˇˇˇ8⁄‡øﬂæ.
+q
+java:S1128"TRemove this unused import 'io.netty.handler.codec.http.multipart.InterfaceHttpData'.(ìºﬂÑ8—≈Éﬁæ.
+X	java:S125="<This block of commented-out lines of code should be removed.(öí§∆8⁄‡øﬂæ.
+P
+java:S1128".Remove this unused import 'java.util.HashMap'.(ôòîÄ˘ˇˇˇˇ8—≈Éﬁæ.
+]	java:S125B"<This block of commented-out lines of code should be removed.(ˆÂæÉ˝ˇˇˇˇ8⁄‡øﬂæ.
+v
+java:S1128
+"YRemove this unused import 'io.netty.handler.codec.http.multipart.DefaultHttpDataFactory'.(πƒÁÜ8—≈Éﬁæ.
+s
+java:S1128"QRemove this unused import 'org.springframework.web.bind.annotation.RequestParam'.(¬¨¿∑˘ˇˇˇˇ8—≈Éﬁæ.
+X	java:S1258"<This block of commented-out lines of code should be removed.(’Ë∫Í8⁄‡øﬂæ.
+X	java:S125R"<This block of commented-out lines of code should be removed.(ì⁄∑∫8⁄‡øﬂæ.
+Y
+java:S1128"<Remove this unused import 'com.alibaba.fastjson.JSONObject'.(‰˝µù8—≈Éﬁæ.
+t
+java:S1128"RRemove this unused import 'io.netty.handler.codec.http.multipart.MemoryAttribute'.(∫πëÍ¸ˇˇˇˇ8—≈Éﬁæ.

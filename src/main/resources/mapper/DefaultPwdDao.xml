@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="work.aijiu.dao.DefaultPwdDao">
+
+    <resultMap id="BaseResultMap" type="work.aijiu.entity.DefaultPwd">
+        <!--@Table default_pwd-->
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="defaultPwd" column="default_pwd" jdbcType="VARCHAR"/>
+        <result property="status" column="status" jdbcType="VARCHAR"/>
+        <result property="remark" column="remark" jdbcType="VARCHAR"/>
+    </resultMap>
+
+</mapper>

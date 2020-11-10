@@ -1,0 +1,12 @@
+
+Z	java:S106*"9Replace this use of System.out or System.err by a logger.(½ºˆ‡ûÿÿÿÿ8ÓË¬¾.
+Z	java:S1061"9Replace this use of System.out or System.err by a logger.(Âäèÿÿÿÿÿ8€‰º¾.
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(è£ÿÿÿÿÿ8ºí¢¾.
+\
+java:S1128":Remove this unused import 'java.util.concurrent.Executor'.(÷ı¶Œúÿÿÿÿ8ıà˜¾.
+Z	java:S106."9Replace this use of System.out or System.err by a logger.(½ºˆ‡ûÿÿÿÿ8Â´¾.
+J
+java:S1604"(Make this anonymous inner class a lambda(á†áıÿÿÿÿ8¤·¦¾.
+l
+java:S2095"JUse try-with-resources or close this "ServerSocket" in a "finally" clause.(áÜŞşÿÿÿÿ8÷šŸ¾.
+Z	java:S1069"9Replace this use of System.out or System.err by a logger.(Ñ†„ıÿÿÿÿ8µŸ³¾.

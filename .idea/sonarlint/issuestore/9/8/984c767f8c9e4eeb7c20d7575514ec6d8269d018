@@ -1,0 +1,8 @@
+
+^
+java:S1075"ARefactor your code to get this URI from a customizable parameter.(¸»Ó8§İ‰”¾.
+o
+java:S2095"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(¶ÈÖëşÿÿÿÿ8ô·Œ”¾.
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(Èòæüÿÿÿÿ8”¸–”¾.
+Q
+java:S1128"5Remove this unused import 'java.io.FileOutputStream'.(˜«ªg8§İ‰”¾.

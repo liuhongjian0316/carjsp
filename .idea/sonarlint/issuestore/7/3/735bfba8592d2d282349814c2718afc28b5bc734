@@ -1,0 +1,36 @@
+
+`
+java:S4488"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(èì‹³
+p
+java:S1128
+"NRemove this unused import 'work.aijiu.service.ShopPropertiesWorkOrderService'.(„™ ¨þÿÿÿÿ8‚‘£ÈÙ.
+e
+java:S4488A"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ä°³†8ñ÷ŠÛÙ.
+m
+java:S4488®"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(ùòæ¢úÿÿÿÿ8¯‡§‡Ú.
+T
+java:S11555">Use isEmpty() to check whether the collection is empty or not.(™ÀÑœ
+k
+java:S4488¡"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(±›Ðáùÿÿÿÿ8ÜÛ–ðÙ.
+h
+java:S4488Õ"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(ŒïÛç8“û˜àÚ.
+q
+java:S1128"TRemove this unused import 'work.aijiu.service.ShopPropertiesRewardWorkOrderService'.(˜âöú8‚‘£ÈÙ.
+r
+java:S1128	"PRemove this unused import 'work.aijiu.service.ShopPropertiesWorkOrderCsService'.(Üó®øÿÿÿÿ8‚‘£ÈÙ.
+j
+java:S4488u"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ƒäÆÎøÿÿÿÿ8ã‰ˆðÙ.
+k
+java:S4488€"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ÉîÈùýÿÿÿÿ8€ÃŠðÙ.
+\
+java:S1155ë">Use isEmpty() to check whether the collection is empty or not.(™ÀÑœ8“û˜àÚ.
+e
+java:S4488W"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(äº¯«8®®ƒãÙ.
+k
+java:S4488‹"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(†äðþÿÿÿÿ8ÛÞ”ðÙ.
+k
+java:S4488–"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ŠÃ‘ùÿÿÿÿ8ÛÞ”ðÙ.
+\
+java:S1155È">Use isEmpty() to check whether the collection is empty or not.(™ÀÑœ8¯‡§‡Ú.
+e
+java:S4488L"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(õ´ºå8æ–ÆÜÙ.

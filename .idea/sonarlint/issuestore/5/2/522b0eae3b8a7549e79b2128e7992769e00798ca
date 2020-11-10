@@ -1,0 +1,14 @@
+
+Q
+java:S1128"4Remove this unused import 'io.netty.buffer.ByteBuf'.(¬¶ç›8Â¯’¸¾.
+U	java:S106("9Replace this use of System.out or System.err by a logger.(ÅñŸ8Â¯’¸¾.
+d
+java:S1128"BRemove this unused import 'io.netty.channel.socket.SocketChannel'.(ĞªÇÁúÿÿÿÿ8Â¯’¸¾.
+U	java:S106""9Replace this use of System.out or System.err by a logger.(£·®8×Î¤¸¾.
+X	java:S1258"<This block of commented-out lines of code should be removed.(Ó—¾š8¹ú¦¸¾.
+K
+java:S1128")Remove this unused import 'java.net.URL'.(ñìÁ„üÿÿÿÿ8Â¯’¸¾.
+T	java:S106%"9Replace this use of System.out or System.err by a logger.(ÌÔà/8Â¯’¸¾.
+F
+java:S1128
+")Remove this unused import 'java.net.URI'.(Ö¦¨°8Â¯’¸¾.

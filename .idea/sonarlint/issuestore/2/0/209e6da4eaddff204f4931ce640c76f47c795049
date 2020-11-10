@@ -1,0 +1,28 @@
+
+\
+java:S2147†"ECombine this catch with the one at line 128, which has the same body.(ï­£Ä
+`
+java:S2147i"ECombine this catch with the one at line 102, which has the same body.(÷¿­¹ÿÿÿÿÿ
+N	java:S106C"9Replace this use of System.out or System.err by a logger.(½„¤‡
+\
+java:S2147¡"ECombine this catch with the one at line 155, which has the same body.(ï­£Ä
+Z
+java:S2147Q"DCombine this catch with the one at line 75, which has the same body.(ï­£Ä
+N	java:S106d"9Replace this use of System.out or System.err by a logger.(½„¤‡
+O	java:S106™"9Replace this use of System.out or System.err by a logger.(½„¤‡
+a
+java:S2147ž"ECombine this catch with the one at line 155, which has the same body.(÷¿­¹ÿÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(úŽ÷¤ûÿÿÿÿ
+[
+java:S2147l"ECombine this catch with the one at line 102, which has the same body.(ï­£Ä
+Z
+java:S2147)"DCombine this catch with the one at line 35, which has the same body.(ï­£Ä
+N	java:S106~"9Replace this use of System.out or System.err by a logger.(½„¤‡
+N	java:S106!"9Replace this use of System.out or System.err by a logger.(½„¤‡
+_
+java:S2147&"DCombine this catch with the one at line 35, which has the same body.(÷¿­¹ÿÿÿÿÿ
+N	java:S106H"9Replace this use of System.out or System.err by a logger.(½„¤‡
+_
+java:S2147N"DCombine this catch with the one at line 75, which has the same body.(÷¿­¹ÿÿÿÿÿ
+a
+java:S2147ƒ"ECombine this catch with the one at line 128, which has the same body.(÷¿­¹ÿÿÿÿÿ

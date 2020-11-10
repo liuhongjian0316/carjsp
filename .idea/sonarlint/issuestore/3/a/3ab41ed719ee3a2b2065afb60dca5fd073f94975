@@ -1,0 +1,17 @@
+
+v
+java:S1104"YMake organizeLevel a static final constant or non-public and provide accessors if needed.(ÑŒÿĞ8ÒœÊ³Ô.
+t
+java:S1104)"RMake remark a static final constant or non-public and provide accessors if needed.(–şŠ¶ıÿÿÿÿ8ÒœÊ³Ô.
+B
+java:S1948/"%Make "children" private or transient.(çÃ¥Ì8¦´È³Ô.
+|
+java:S1104!"ZMake organizeParent a static final constant or non-public and provide accessors if needed.(ÒÌÆşÿÿÿÿ8ÒœÊ³Ô.
+z
+java:S1104"XMake organizeName a static final constant or non-public and provide accessors if needed.(…üñüÿÿÿÿ8ÒœÊ³Ô.
+o
+java:S1104%"RMake status a static final constant or non-public and provide accessors if needed.(œ©²ÿ8ÒœÊ³Ô.
+C
+java:S1948,"!Make "subs" private or transient.(Ê‹Âğúÿÿÿÿ8¦´È³Ô.
+s
+java:S1104"VMake organizeId a static final constant or non-public and provide accessors if needed.(ò»œ¤8èÄÉ³Ô.

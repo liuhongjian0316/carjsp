@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="work.aijiu.dao.LandlordsChildDao">
+
+    <resultMap id="BaseResultMap" type="work.aijiu.entity.LandlordsChild">
+        <!--@Table landlords_child-->
+        <result property="landlordsChildId" column="landlords_child_id" jdbcType="VARCHAR"/>
+        <result property="landlordsId" column="landlords_id" jdbcType="VARCHAR"/>
+        <result property="landlordsChildType" column="landlords_child_type" jdbcType="VARCHAR"/>
+        <result property="landlordsChildName" column="landlords_child_name" jdbcType="VARCHAR"/>
+        <result property="landlordsChildSex" column="landlords_child_sex" jdbcType="VARCHAR"/>
+        <result property="landlordsChildAge" column="landlords_child_age" jdbcType="VARCHAR"/>
+        <result property="landlordsChildCard" column="landlords_child_card" jdbcType="VARCHAR"/>
+        <result property="landlordsChildTel" column="landlords_child_tel" jdbcType="VARCHAR"/>
+        <result property="landlordsChildWx" column="landlords_child_wx" jdbcType="VARCHAR"/>
+        <result property="landlordsChildQq" column="landlords_child_qq" jdbcType="VARCHAR"/>
+        <result property="state" column="state" jdbcType="VARCHAR"/>
+        <result property="landlordsChildAvatar" column="landlords_child_avatar" jdbcType="VARCHAR"/>
+        <result property="remark" column="remark" jdbcType="VARCHAR"/>
+    </resultMap>
+
+
+</mapper>

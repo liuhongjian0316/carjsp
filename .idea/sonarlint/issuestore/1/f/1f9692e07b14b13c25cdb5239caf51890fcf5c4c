@@ -1,0 +1,13 @@
+
+c
+java:S1128"FRemove this unused import 'work.aijiu.entity.ShopPropertiesWorkOrder'.(öâÓ8ãÎ¶¶Ú.
+S
+java:S1128"6Remove this unused import 'javax.annotation.Resource'.(î¾Ì—8³§ÒžÔ.
+`
+java:S1155_">Use isEmpty() to check whether the collection is empty or not.(À¥šÝÿÿÿÿÿ8Õ±ò¥Ô.
+_
+java:S1128	"=Remove this unused import 'work.aijiu.common.utils.IdWorker'.(ÀšÆÜùÿÿÿÿ8»ãç Ô.
+`
+java:S1155h">Use isEmpty() to check whether the collection is empty or not.(À¥šÝÿÿÿÿÿ8áî²¦Ô.
+H
+java:S1128"+Remove this unused import 'java.util.Date'.(¸…¼ü8»ãç Ô.

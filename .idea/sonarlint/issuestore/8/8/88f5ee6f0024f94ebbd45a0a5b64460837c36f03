@@ -1,0 +1,8 @@
+
+U
+java:S1128"3Remove this unused import 'javax.management.Query'.(³ì—ûşÿÿÿÿ8’†Ö.
+p
+java:S1128"NRemove this unused import 'com.sun.org.apache.xpath.internal.operations.Bool'.(™¦èûÿÿÿÿ8õö¯†Ù.
+W
+java:S1191"5Use classes from the Java API instead of Sun classes.(™¦èûÿÿÿÿ8õö¯†Ù.
+j	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(óÁ†Ê8¶§‡Ö.

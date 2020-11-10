@@ -1,0 +1,5 @@
+
+›
+java:S1130A"yRemove the declaration of thrown exception 'org.apache.shiro.authc.AuthenticationException' which is a runtime exception.(¡ïË»ùÿÿÿÿ8ˆ’ÞÿÉ.
+^
+java:S18585"A"getPerm" returns a string, there's no need to call "toString()".(³ù‰Ï8¤‘ùšË.

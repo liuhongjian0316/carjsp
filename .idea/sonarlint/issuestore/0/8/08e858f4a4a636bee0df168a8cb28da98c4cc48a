@@ -1,0 +1,31 @@
+
+v
+java:S1104,"TMake parentId a static final constant or non-public and provide accessors if needed.(úŞ¸œıÿÿÿÿ8—£’úÉ.
+m
+java:S1104"PMake name a static final constant or non-public and provide accessors if needed.( şÍ¾8—£’úÉ.
+s
+java:S1104>"VMake createTime a static final constant or non-public and provide accessors if needed.(ßŞÑú8—£’úÉ.
+j
+java:S1104"NMake id a static final constant or non-public and provide accessors if needed.(†·Ûq8¿‘úÉ.
+l
+java:S1104$"OMake url a static final constant or non-public and provide accessors if needed.(…åØ8—£’úÉ.
+n
+java:S1104("QMake perms a static final constant or non-public and provide accessors if needed.(Áå£Ê8—£’úÉ.
+v
+java:S11044"TMake orderNum a static final constant or non-public and provide accessors if needed.(£›Ù‚şÿÿÿÿ8—£’úÉ.
+>
+java:S1948C"!Make "subs" private or transient.(ÆÎ 8ÕŠúÉ.
+m
+java:S11048"PMake icon a static final constant or non-public and provide accessors if needed.(­À¤8—£’úÉ.
+x
+java:S1104@"VMake updateTime a static final constant or non-public and provide accessors if needed.(Áô´åÿÿÿÿÿ8—£’úÉ.
+t
+java:S1104<"RMake status a static final constant or non-public and provide accessors if needed.(ƒóšÜüÿÿÿÿ8—£’úÉ.
+u
+java:S1104"XMake permissionId a static final constant or non-public and provide accessors if needed.(ÆÒ¯8—£’úÉ.
+y
+java:S1104 "WMake description a static final constant or non-public and provide accessors if needed.(¹ÿ†ğÿÿÿÿÿ8—£’úÉ.
+m
+java:S11040"PMake type a static final constant or non-public and provide accessors if needed.(ı®ˆ•8—£’úÉ.
+G
+java:S1948F"%Make "children" private or transient.(“…î²ùÿÿÿÿ8‡‰×Ê.

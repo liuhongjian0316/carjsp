@@ -1,0 +1,23 @@
+
+S
+java:S1128"6Remove this unused import 'javax.annotation.Resource'.(î¾Ì—8Óú§àÒ.
+L
+java:S5411I"*Use the primitive boolean expression here.(˜÷€¥ùÿÿÿÿ8¨ºÆæÒ.
+G
+java:S5411e"*Use the primitive boolean expression here.(‚ ‹Ò8Å¼„çÒ.
+e
+java:S44887"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(™¼ô8‰Ñ½âÒ.
+Z
+java:S1128	"8Remove this unused import 'work.aijiu.entity.Community'.(ñëºîÿÿÿÿÿ8Æ„æàÒ.
+l
+java:S4488B"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(ïÙõ©ıÿÿÿÿ8Ûı¶åÒ.
+j
+java:S4488&"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(…±ñÖúÿÿÿÿ8ÚÄäàÒ.
+F
+java:S5411W"*Use the primitive boolean expression here.(– ÜE8ñ«ÑæÒ.
+g
+java:S4488U"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(çü£8Àï¶æÒ.
+j
+java:S4488q"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(òñºÛúÿÿÿÿ8Š©Ó.
+j
+java:S4488c"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ëçÈøÿÿÿÿ8ºÏòæÒ.

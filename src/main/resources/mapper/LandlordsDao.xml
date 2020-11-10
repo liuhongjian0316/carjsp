@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="work.aijiu.dao.LandlordsDao">
+
+    <resultMap id="BaseResultMap" type="work.aijiu.entity.Landlords">
+        <!--@Table landlords-->
+        <result property="landlordsId" column="landlords_id" jdbcType="VARCHAR"/>
+        <result property="landlordsName" column="landlords_name" jdbcType="VARCHAR"/>
+        <result property="landlordsSex" column="landlords_sex" jdbcType="VARCHAR"/>
+        <result property="landlordsAge" column="landlords_age" jdbcType="VARCHAR"/>
+        <result property="landlordsCard" column="landlords_card" jdbcType="VARCHAR"/>
+        <result property="landlordsTel" column="landlords_tel" jdbcType="VARCHAR"/>
+        <result property="landlordsWx" column="landlords_wx" jdbcType="VARCHAR"/>
+        <result property="landlordsQq" column="landlords_qq" jdbcType="VARCHAR"/>
+        <result property="state" column="state" jdbcType="VARCHAR"/>
+        <result property="landlordsAvatar" column="landlords_avatar" jdbcType="VARCHAR"/>
+        <result property="remark" column="remark" jdbcType="VARCHAR"/>
+    </resultMap>
+</mapper>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="work.aijiu.dao.ShopPropertiesShopDao">
+
+    <resultMap id="BaseResultMap" type="work.aijiu.entity.ShopPropertiesShop">
+        <!--@Table shop_properties_shop-->
+        <result property="shopId" column="shop_id" jdbcType="VARCHAR"/>
+        <result property="username" column="username" jdbcType="VARCHAR"/>
+        <result property="pwd" column="pwd" jdbcType="VARCHAR"/>
+        <result property="tel" column="tel" jdbcType="VARCHAR"/>
+        <result property="realname" column="realname" jdbcType="VARCHAR"/>
+        <result property="address" column="address" jdbcType="VARCHAR"/>
+        <result property="landmarks" column="landmarks" jdbcType="VARCHAR"/>
+        <result property="cityCode" column="city_code" jdbcType="VARCHAR"/>
+        <result property="mapX" column="map_x" jdbcType="VARCHAR"/>
+        <result property="mapY" column="map_y" jdbcType="VARCHAR"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="status" column="status" jdbcType="VARCHAR"/>
+        <result property="remark" column="remark" jdbcType="VARCHAR"/>
+        <result property="roleId" column="role_id" jdbcType="VARCHAR"/>
+        <result property="organizeId" column="organize_id" jdbcType="VARCHAR"/>
+    </resultMap>
+
+</mapper>

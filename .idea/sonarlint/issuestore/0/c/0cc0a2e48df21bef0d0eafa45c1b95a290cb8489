@@ -1,0 +1,16 @@
+
+I
+java:S1602 ",Remove useless curly braces around statement(Åúˆ 8­œ„Þ¾.
+M
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8­œ„Þ¾.
+R
+java:S1128"0Remove this unused import 'java.io.IOException'.(ªº»Úýÿÿÿÿ8­œ„Þ¾.
+Ž
+java:S1130"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(Ù‡¬Úûÿÿÿÿ8­œ„Þ¾.
+X	java:S125"<This block of commented-out lines of code should be removed.(““ï‹8­œ„Þ¾.
+g	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ù‡¬Úûÿÿÿÿ8­œ„Þ¾.
+Y
+java:S1128"<Remove this unused import 'com.alibaba.fastjson.JSONObject'.(äýµ8­œ„Þ¾.
+V
+java:S2864("4Iterate over the "entrySet" instead of the "keySet".(ÆÑøÄùÿÿÿÿ8­œ„Þ¾.
+Z	java:S106-"9Replace this use of System.out or System.err by a logger.(òÉÀØþÿÿÿÿ8­œ„Þ¾.

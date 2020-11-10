@@ -1,0 +1,12 @@
+
+b
+java:S1128"@Remove this unused import 'java.nio.channels.SelectableChannel'.(¿˜¨ôşÿÿÿÿ8©¦®¾.
+C
+java:S1170 "!Make this final field static too.(ÖÆÊÈÿÿÿÿÿ8ñÒï­¾.
+E	java:S108f")Either remove or fill this block of code.(Úîø›8Ü°®¾.
+Z	java:S106^"9Replace this use of System.out or System.err by a logger.(½ ‰¸øÿÿÿÿ8Ü°®¾.
+>
+java:S1170"!Make this final field static too.(âÔ‹¯8ñÒï­¾.
+k
+java:S1128"NRemove this unused import 'org.springframework.expression.spel.ast.Selection'.(ø’†À8 ú®¾.
+Z	java:S106<"9Replace this use of System.out or System.err by a logger.(£üÜÛûÿÿÿÿ8ç°’®¾.

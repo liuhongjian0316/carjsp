@@ -1,0 +1,27 @@
+
+Q
+java:S1128"4Remove this unused import 'java.lang.reflect.Proxy'.(…ÕÛ²8øÕÊÊ.
+h
+java:S1128"FRemove this unused import 'org.springframework.stereotype.Controller'.(øŠ—Öùÿÿÿÿ8®€¡ˆË.
+Q
+java:S1128"4Remove this unused import 'java.lang.reflect.Field'.(„‡Áú8øÕÊÊ.
+S
+java:S1128"6Remove this unused import 'javax.annotation.Resource'.(î¾Ì—8˜”øÉ.
+d
+java:S44887"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(÷˜£8ªÃ©ÖÊ.
+j
+java:S4488C"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Áİ‡ªøÿÿÿÿ8™‰øİØ.
+W
+java:S1128"5Remove this unused import 'java.lang.reflect.Method'.(Í“¯äüÿÿÿÿ8øÕÊÊ.
+L
+java:S1128"*Remove this unused import 'java.util.Map'.(¼è½Òşÿÿÿÿ8øÕÊÊ.
+]
+java:S1128"@Remove this unused import 'java.lang.reflect.InvocationHandler'.(Ùé8øÕÊÊ.
+n
+java:S1128"LRemove this unused import 'org.apache.shiro.authz.annotation.RequiresRoles'.(¥¸Ã²øÿÿÿÿ8Åº¤„Ë.
+j
+java:S4488."HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(à¶ë¡ùÿÿÿÿ8€ÂşªÊ.
+j
+java:S4488$"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ä¦éúÿÿÿÿ8³œÙùÉ.
+o
+java:S1128"RRemove this unused import 'org.apache.shiro.authz.annotation.RequiresPermissions'.(ëÇ«º8Åº¤„Ë.

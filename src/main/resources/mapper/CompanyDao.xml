@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="work.aijiu.dao.CompanyDao">
+
+    <resultMap id="BaseResultMap" type="work.aijiu.entity.Company">
+        <!--@Table company-->
+        <result property="companyId" column="company_id" jdbcType="VARCHAR"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="address" column="address" jdbcType="VARCHAR"/>
+        <result property="tel" column="tel" jdbcType="VARCHAR"/>
+        <result property="service" column="service" jdbcType="VARCHAR"/>
+        <result property="landmarks" column="landmarks" jdbcType="VARCHAR"/>
+        <result property="cityCode" column="city_code" jdbcType="VARCHAR"/>
+        <result property="mapX" column="map_x" jdbcType="VARCHAR"/>
+        <result property="mapY" column="map_y" jdbcType="VARCHAR"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property=" legalPerson" column=" legal_person" jdbcType="VARCHAR"/>
+        <result property="capital" column="capital" jdbcType="VARCHAR"/>
+        <result property="setUpTime" column="set_up_time" jdbcType="TIMESTAMP"/>
+        <result property="registrationOffice" column="registration_office" jdbcType="VARCHAR"/>
+        <result property="scopeBusiness" column="scope_business" jdbcType="VARCHAR"/>
+        <result property="idNumber" column="id_number" jdbcType="VARCHAR"/>
+        <result property="validityTime" column="validity_time" jdbcType="TIMESTAMP"/>
+        <result property="businessLicensePhoto" column="business_license_photo" jdbcType="VARCHAR"/>
+        <result property="status" column="status" jdbcType="VARCHAR"/>
+        <result property="state" column="state" jdbcType="VARCHAR"/>
+        <result property="remark" column="remark" jdbcType="VARCHAR"/>
+        <result property="pwd" column="remark" jdbcType="VARCHAR"/>
+        <result property="roleId" column="role_id" jdbcType="VARCHAR"/>
+        <result property="organizeId" column="organize_id" jdbcType="VARCHAR"/>
+    </resultMap>
+
+</mapper>

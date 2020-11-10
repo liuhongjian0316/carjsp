@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--suppress ALL -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       https://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/mvc
+       https://www.springframework.org/schema/mvc/spring-mvc.xsd"
+        >
+
+    <!-- 自动扫描包，让指定包下的注解生效,由IOC容器统一管理 -->
+    <context:component-scan base-package="work.aijiu,com.github.tobato.fastdfs.service,com.github.tobato.fastdfs.domain"/>
+    <!-- 让Spring MVC不处理静态资源 -->
+    <mvc:default-servlet-handler />
+    <!--指定资源不被DispatcherServlet拦截-->
+    <mvc:resources mapping="/static/" location="/static/**"/>
+    <!--声明注解-->
+    <context:annotation-config/>
+    <!--
+    支持mvc注解驱动
+        在spring中一般采用@RequestMapping注解来完成映射关系
+        要想使@RequestMapping注解生效
+        必须向上下文中注册DefaultAnnotationHandlerMapping
+        和一个AnnotationMethodHandlerAdapter实例
+        这两个实例分别在类级别和方法级别处理。
+        而annotation-driven配置帮助我们自动完成上述两个实例的注入。
+     -->
+    <mvc:annotation-driven />
+
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <mvc:exclude-mapping path="/login" />
+            <bean class="work.aijiu.shiro.JwtFilter" />
+        </mvc:interceptor>
+    </mvc:interceptors>
+
+
+    <!-- 默认访问跳转到登录页面(即定义无需Controller的url<->view直接映射) -->
+    <mvc:view-controller path="/" view-name="forward:/login"/>
+
+    <!--    &lt;!&ndash; 视图解析器 &ndash;&gt;-->
+    <!--    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"-->
+    <!--          id="internalResourceViewResolver">-->
+    <!--        &lt;!&ndash; 前缀 &ndash;&gt;-->
+    <!--        <property name="prefix" value="/WEB-INF/jsp/" />-->
+    <!--        &lt;!&ndash; 后缀 &ndash;&gt;-->
+    <!--        <property name="suffix" value=".jsp" />-->
+    <!--    </bean>-->
+    <!--    -->
+
+    <!-- 视图解析器 -->
+    <!-- 使用thymeleaf解析 -->
+    <bean id="templateResolver" class="org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver">
+        <property name="prefix" value="/WEB-INF/view/"/>
+        <property name="suffix" value=".html"/>
+        <property name="templateMode" value="HTML"/>
+        <property name="cacheable" value="false"/>
+        <property name="characterEncoding" value="utf-8"/>
+    </bean>
+    <bean id="templateEngine" class="org.thymeleaf.spring5.SpringTemplateEngine">
+        <property name="templateResolver" ref="templateResolver"/>
+    </bean>
+
+    <bean class="org.thymeleaf.spring5.view.ThymeleafViewResolver">
+        <property name="templateEngine" ref="templateEngine"/>
+        <property name="characterEncoding" value="utf-8"/> <!--中文乱码-->
+    </bean>
+
+    <!-- spring配置duid数据库连接池的数据源 -->
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+        <!-- 基本属性 url、user、password127.0.0.1 -->
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
+        <property name="url" value="jdbc:mysql://localhost:3306/properties?serverTimezone=UTC&amp;characterEncoding=utf8" />
+        <property name="username" value="root" />
+        <property name="password" value="LHJlhj0316@" />
+
+        <!-- 配置初始化大小、最小、最大 -->
+        <property name="initialSize" value="2" />
+        <property name="minIdle" value="1" />
+        <property name="maxActive" value="20" />
+
+        <!-- 配置获取连接等待超时的时间 -->
+        <property name="maxWait" value="60000" />
+
+        <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+        <property name="timeBetweenEvictionRunsMillis" value="60000" />
+
+        <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+        <property name="minEvictableIdleTimeMillis" value="300000" />
+
+        <!-- 验证连接有效与否的SQL，不同的数据配置不同 -->
+
+        <property name="validationQuery" value="SELECT 'x' from dual " />
+        <property name="testWhileIdle" value="true" />
+        <property name="testOnBorrow" value="false" />
+        <property name="testOnReturn" value="false" />
+
+        <!-- 打开PSCache，并且指定每个连接上PSCache的大小 -->
+        <property name="poolPreparedStatements" value="true" />
+        <property name="maxPoolPreparedStatementPerConnectionSize" value="20" />
+
+        <!-- 配置监控统计拦截的filters -->
+        <property name="filters" value="stat" />
+    </bean>
+
+    <!-- SqlSessionFactory Config -->
+    <bean id="sqlSessionFactory" class="com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="mapperLocations" value="classpath*:mapper/*Dao.xml"/>
+        <!-- 配置分页插件 -->
+        <property name="plugins">
+            <array>
+                <bean class="com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor">
+                </bean>
+            </array>
+        </property>
+    </bean>
+
+    <bean id="countSqlParser" class="com.baomidou.mybatisplus.extension.plugins.pagination.optimize.JsqlParserCountOptimize">
+        <!-- 设置为 true 可以优化部分 left join 的sql -->
+        <property name="optimizeJoin" value="true"/>
+    </bean>
+
+    <!-- MyBatis Mapper Scan Config  -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="work.aijiu.dao"/>
+    </bean>
+
+
+    <!--加载redis配置文件-->
+    <bean id="annotationPropertyConfigurerRedis"
+          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="order" value="1" />
+        <property name="ignoreUnresolvablePlaceholders" value="true" />
+        <property name="locations">
+            <list>
+                <value>classpath:redis.properties</value>
+            </list>
+        </property>
+    </bean>
+    <!-- redis数据源 -->
+    <bean id="poolConfig" class="redis.clients.jedis.JedisPoolConfig">
+        <!-- 最大空闲数 -->
+        <property name="maxIdle" value="${redis.maxIdle}" />
+        <!-- 最大空连接数 -->
+        <property name="maxTotal" value="${redis.maxTotal}" />
+        <!-- 最大等待时间 -->
+        <property name="maxWaitMillis" value="${redis.maxWaitMillis}" />
+        <!-- 返回连接时，检测连接是否成功 -->
+        <property name="testOnBorrow" value="${redis.testOnBorrow}" />
+    </bean>
+
+    <!-- Spring-redis连接池管理工厂 -->
+    <bean id="jedisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
+        <!-- IP地址 -->
+        <property name="hostName" value="${redis.host}" />
+        <!-- 端口号 -->
+        <property name="port" value="${redis.port}" />
+        <property name="password" value="${redis.password}" />
+        <!-- 超时时间 默认2000-->
+        <property name="timeout" value="${redis.timeout}" />
+        <!-- 连接池配置引用 -->
+        <property name="poolConfig" ref="poolConfig" />
+        <!-- usePool：是否使用连接池 -->
+        <property name="usePool" value="true"/>
+    </bean>
+
+    <!-- redis template definition -->
+    <bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate">
+        <property name="connectionFactory" ref="jedisConnectionFactory" />
+        <property name="keySerializer">
+            <bean class="org.springframework.data.redis.serializer.StringRedisSerializer" />
+        </property>
+        <property name="valueSerializer">
+            <bean class="org.springframework.data.redis.serializer.JdkSerializationRedisSerializer" />
+        </property>
+        <property name="hashKeySerializer">
+            <bean class="org.springframework.data.redis.serializer.StringRedisSerializer" />
+        </property>
+        <property name="hashValueSerializer">
+            <bean class="org.springframework.data.redis.serializer.JdkSerializationRedisSerializer" />
+        </property>
+        <!--开启事务  -->
+        <property name="enableTransactionSupport" value="true"></property>
+    </bean>
+
+    <!--自定义redis工具类,在需要缓存的地方注入此类  -->
+    <bean id="redisService" class="work.aijiu.redis.RedisService">
+    </bean>
+
+    <!--shiro配置信息-->
+    <import resource="classpath:shiro.xml"></import>
+
+
+    <!-- 多媒体解析器 -->
+    <bean id="multipartResolver"  class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property  name="defaultEncoding"  value="utf-8" />
+        <!-- 文件上传的最大值为 10MB，10*1024*1024 -->
+        <property  name="maxUploadSize"  value ="10240000" />
+    </bean>
+    <!--fastdfs-->
+    <!--配置连接管理器-->
+    <bean id="trackerConnectionManager" class="com.github.tobato.fastdfs.domain.conn.TrackerConnectionManager">
+        <constructor-arg name="pool" ref="fdfsConnectionPool">
+        </constructor-arg>
+        <!--配置fastDFS tracker 服务器 ip:port 地址-->
+        <property name="trackerList">
+            <list>
+                <value>121.36.156.106:22122</value>
+            </list>
+        </property>
+    </bean>
+    <!--配置连接池-->
+    <bean id="fdfsConnectionPool" class="com.github.tobato.fastdfs.domain.conn.FdfsConnectionPool">
+        <!--注入连接池配置-->
+        <constructor-arg name="config" >
+            <bean class="com.github.tobato.fastdfs.domain.conn.ConnectionPoolConfig"/>
+        </constructor-arg>
+        <!--注入连接池工厂-->
+        <constructor-arg name="factory" >
+            <bean class="com.github.tobato.fastdfs.domain.conn.PooledConnectionFactory"/>
+        </constructor-arg>
+    </bean>
+
+
+<!--    &lt;!&ndash;处理未授权的异常&ndash;&gt;-->
+<!--    <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">-->
+<!--        <property name="exceptionMappings">-->
+<!--            <props>-->
+<!--                <prop key="org.apache.shiro.authz.UnauthorizedException">/unAuth.do</prop>-->
+<!--                <prop key="org.apache.shiro.authz.UnauthenticatedException">/unAuth.do</prop>-->
+<!--            </props>-->
+<!--        </property>-->
+<!--    </bean>-->
+
+
+<!--    &lt;!&ndash;    <import resource="classpath:elasticsearch.xml"/>&ndash;&gt;-->
+
+<!--    &lt;!&ndash; 继承自AuthorizingRealm的自定义Realm,即指定Shiro验证用户登录的类为自定义的ShiroDbRealm.java &ndash;&gt;-->
+<!--    <bean id="myRealm" class="work.aijiu.shiro.UserRealm"/>-->
+
+<!--    &lt;!&ndash; 定义缓存管理器 &ndash;&gt;-->
+<!--    <bean id="cacheManager" class="org.apache.shiro.cache.MemoryConstrainedCacheManager" />-->
+
+<!--    <bean id="sessionManager" class="org.apache.shiro.web.session.mgt.DefaultWebSessionManager">-->
+<!--        &lt;!&ndash; session的失效时长，单位毫秒 &ndash;&gt;-->
+<!--        <property name="globalSessionTimeout" value="600000"/>-->
+<!--        &lt;!&ndash; 删除失效的session &ndash;&gt;-->
+<!--        <property name="deleteInvalidSessions" value="true"/>-->
+<!--    </bean>-->
+
+    <!-- Shiro默认会使用Servlet容器的Session,可通过sessionMode属性来指定使用Shiro原生Session -->
+    <!-- 即<property name="sessionMode" value="native"/>,详细说明见官方文档 -->
+    <!-- 这里主要是设置自定义的单Realm应用,若有多个Realm,可使用'realms'属性代替 -->
+<!--    <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">-->
+<!--        <property name="realm" ref="myRealm"/>-->
+<!--        &lt;!&ndash; 使用配置的缓存管理器 &ndash;&gt;-->
+<!--        <property name="cacheManager" ref="cacheManager"></property>-->
+<!--        &lt;!&ndash; 会话管理 &ndash;&gt;-->
+<!--        <property name="sessionManager" ref="sessionManager" />-->
+<!--    </bean>-->
+
+    <!-- Shiro主过滤器本身功能十分强大,其强大之处就在于它支持任何基于URL路径表达式的、自定义的过滤器的执行 -->
+    <!-- Web应用中,Shiro可控制的Web请求必须经过Shiro主过滤器的拦截,Shiro对基于Spring的Web应用提供了完美的支持 -->
+<!--    <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">-->
+<!--        &lt;!&ndash; Shiro的核心安全接口,这个属性是必须的 &ndash;&gt;-->
+<!--        <property name="securityManager" ref="securityManager"/>-->
+<!--        &lt;!&ndash; 要求登录时的链接(可根据项目的URL进行替换),非必须的属性,默认会自动寻找Web工程根目录下的"/login.jsp"页面 &ndash;&gt;-->
+<!--        <property name="loginUrl" value="/login"/>-->
+<!--        &lt;!&ndash; 登录成功后要跳转的连接(本例中此属性用不到,因为登录成功后的处理逻辑在LoginController里硬编码为main.jsp了) &ndash;&gt;-->
+<!--         <property name="successUrl" value="/index"/>-->
+<!--        &lt;!&ndash; 用户访问未对其授权的资源时,所显示的连接 &ndash;&gt;-->
+<!--        &lt;!&ndash; 若想更明显的测试此属性可以修改它的值,如unauthor.jsp,然后用[玄玉]登录后访问/admin/listUser.jsp就看见浏览器会显示unauthor.jsp &ndash;&gt;-->
+<!--        &lt;!&ndash;<property name="unauthorizedUrl" value="/unauthorizedPage"/>&ndash;&gt;-->
+<!--        &lt;!&ndash; Shiro连接约束配置,即过滤链的定义 &ndash;&gt;-->
+<!--        &lt;!&ndash; 此处可配合这篇文章来理解各个过滤连的作用http://blog.csdn.net/jadyer/article/details/12172839 &ndash;&gt;-->
+<!--        &lt;!&ndash; 下面value值的第一个'/'代表的路径是相对于HttpServletRequest.getContextPath()的值来的 &ndash;&gt;-->
+<!--        &lt;!&ndash; anon：它对应的过滤器里面是空的,什么都没做,这里.do和.jsp后面的*表示参数,比方说login.jsp?main这种 &ndash;&gt;-->
+<!--        &lt;!&ndash; authc：该过滤器下的页面必须验证后才能访问,它是Shiro内置的一个拦截器org.apache.shiro.web.filter.authc.FormAuthenticationFilter &ndash;&gt;-->
+<!--        &lt;!&ndash;-->
+<!--        anon 任何用户都能请求-->
+<!--        authc 认证后可请求-->
+
+<!--        &ndash;&gt;-->
+<!--        <property name="filterChainDefinitions">-->
+<!--            <value>-->
+<!--                /index**=authc-->
+<!--                /login=anon-->
+<!--                /a=authc-->
+<!--                /mydemo/login=anon-->
+<!--                /mydemo/getVerifyCodeImage=anon-->
+<!--                /main**=authc-->
+<!--                /user/info**=authc-->
+<!--                /admin/listUser**=authc,perms[admin:manage]-->
+<!--            </value>-->
+<!--        </property>-->
+<!--    </bean>-->
+
+    <!-- 保证实现了Shiro内部lifecycle函数的bean执行 -->
+<!--    <bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>-->
+
+    <!-- 开启Shiro的注解(如@RequiresRoles,@RequiresPermissions),需借助SpringAOP扫描使用Shiro注解的类,并在必要时进行安全逻辑验证 -->
+    <!-- 配置以下两个bean即可实现此功能 -->
+    <!-- Enable Shiro Annotations for Spring-configured beans. Only run after the lifecycleBeanProcessor has run -->
+    <!-- 由于本例中并未使用Shiro注解,故注释掉这两个bean(个人觉得将权限通过注解的方式硬编码在程序中,查看起来不是很方便,没必要使用) -->
+    <!--
+    <bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator" depends-on="lifecycleBeanPostProcessor"/>
+    <bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
+        <property name="securityManager" ref="securityManager"/>
+    </bean>
+     -->
+
+</beans>

@@ -1,0 +1,17 @@
+
+[
+java:S1155C">Use isEmpty() to check whether the collection is empty or not.(ÊÑ¿Õ8Ù”ô¼Ö.
+[
+java:S1155J">Use isEmpty() to check whether the collection is empty or not.(ÊÑ¿Õ8Ù”ô¼Ö.
+w
+java:S1128"URemove this unused import 'work.aijiu.service.ShopPropertiesRepairWorkerTypeService'.(¡Õô˜úÿÿÿÿ8‚ĞğÔ.
+S
+java:S1128"6Remove this unused import 'javax.annotation.Resource'.(î¾Ì—8µ»½ĞÔ.
+^	java:S125“"<This block of commented-out lines of code should be removed.(‡èÉŞùÿÿÿÿ8¿’§ÕÚ.
+^
+java:S1128
+"ARemove this unused import 'work.aijiu.entity.ShopPropertiesShop'.(Ğİ±8ñ±ùÄÚ.
+[
+java:S1155.">Use isEmpty() to check whether the collection is empty or not.(ÊÑ¿Õ8Ù”ô¼Ö.
+[
+java:S11555">Use isEmpty() to check whether the collection is empty or not.(ÊÑ¿Õ8Ù”ô¼Ö.
